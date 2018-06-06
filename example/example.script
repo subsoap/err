@@ -1,0 +1,43 @@
+local err = require("err.err")
+
+function init(self)
+	msg.post("@render:", "clear_color", { color = vmath.vector4(0.95, 0.95, 0.95, 1) } )
+
+	err.toggle_print()
+	err.toggle_verbose()
+	err.toggle_logging()
+	err.use_date_for_filename = true
+	err.include_timestamp = true
+
+	err.init()
+
+	err.save_log_line("You can manually add lines to log files too.")
+
+	error("this is only a test error")
+	
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end
