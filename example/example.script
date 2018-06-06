@@ -1,18 +1,25 @@
 local err = require("err.err")
 
 function init(self)
+	
 	msg.post("@render:", "clear_color", { color = vmath.vector4(0.95, 0.95, 0.95, 1) } )
 
-	err.toggle_print()
+	--err.toggle_print()
 	err.toggle_verbose()
 	err.toggle_logging()
 	err.use_date_for_filename = true
 	err.include_timestamp = true
 
+	err.enable_crash_logging = true
+	
 	err.init()
 
 	err.save_log_line("You can manually add lines to log files too.")
 
+	
+	crash.write_dump() -- for testing
+	-- because this crash is released the way it is you should only see "Err: Crash dump found, writing to log" every other launch
+	
 	error("this is only a test error")
 	
 end
