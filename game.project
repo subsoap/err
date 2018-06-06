@@ -10,3 +10,6 @@ title = Err
 [library]
 include_dirs = err
 
+[input]
+game_binding = /example/input/game.input_bindingc
+
