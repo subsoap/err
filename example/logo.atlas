@@ -1,5 +1,5 @@
 images {
-  image: "/example/err_logo.png"
+  image: "/err_logo.png"
 }
 margin: 0
 extrude_borders: 0
